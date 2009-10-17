@@ -1,0 +1,41 @@
+/* BASIC SETUP */
+
+	html,body{margin:0;font:10pt verdana,sans-serif;letter-spacing:1px;background-color:#FFF;}
+	a,a:visited,a.activated,label{outline-width:0;outline:none;}
+	a,a:visited,a.activated{color:#347EBF;text-decoration:none;}
+	a:hover{color:#831013;}
+	input{border:1px solid #ccc;font-size:10pt;padding:5px;-moz-border-radius:3px;-webkit-border-radius:3px;}
+	label{-x-system-font:none;cursor:pointer;float:left;font-family:Verdana,Arial,sans-serif;font-size:12pt;font-size-adjust:none;font-stretch:normal;font-style:normal;font-variant:small-caps;font-weight:normal;letter-spacing:2px;line-height:20px;}
+	img{border:none;margin:0;padding:0;vertical-align:middle;}
+	h1{border-bottom:3px solid #999;font-size:1.1em;padding-bottom:2px;}
+	p{line-height:150%;padding:0 20px;}
+	ul{margin:0 1em;}
+	li{margin:1em 0;}
+	.left{float:left;width:50%;}
+	.right{float:right;width:50%;}
+	.clear{clear:both;}
+	.mintop{margin-top:0;padding-top:0;}
+
+/* PAGE SETUP */
+
+	.example{background-color:#d8d8d8;border-bottom:1px solid #ccc;border-top:1px solid #ccc;clear:both;color:#484848;width:100%;}
+	.wrapper{clear:both;margin:0 auto;padding:1em 0;width:960px;}
+	a.download{background-color:#E73627;color:#fff;display:block;float:right;margin-top:10px;padding:20px 30px;-moz-border-radius:5px;-webkit-border-radius:5px;}
+	a.download:hover{background-color:#347EBF;}
+	
+/* LISTBOX SETUP */
+	.target-selection{clear:both;padding-bottom:1em;float:left;width:100%;}	
+	.target-selection .left_box,.target-selection .right_box{float:left;width:50%;}
+	.target-selection .right_box label{display:block;float:none;height:30px;}
+	.target-selection .filter-list{height:30px;position:relative;float:left;}
+	.target-selection .filter-list .live_search{margin: 0 0 5px 5px}
+	.target-selection .filter-list label{padding-top:3px;}
+	.target-selection .filter-list .live_search_clear{cursor:pointer;display:none;position:absolute;right:7px;top:7px}
+
+/* LIST SETUP */
+
+	.list{clear:both;background-color:#f7f7f7;height:140px;border:1px solid #ccc;width:95%;-moz-border-radius:3px;-webkit-border-radius:3px;}
+	.list ul{height:100%;list-style-type:none;margin:0;overflow:auto;padding:0;width:100%;}
+	.list ul .ui-sortable-helper{background-color:#FFEFB1;border-color:#FFCF18;color:#111;}
+	.list ul li{background-color:#E9EDF2;border:1px solid #7DB0DC;color:#555555;cursor:move;font-weight:normal;font-size:10pt;margin:5px;padding:5px;}
+	.list ul li.ui-state-highlight{border:1px solid #333;background-color:#ccc;color:#363636;}

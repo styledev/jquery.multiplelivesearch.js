@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>jQuery MultipleLiveSearch v1.0 Demo</title>
+	<script type="text/javascript" src="js/shCore.js"></script>
+	<script type="text/javascript" src="js/shBrushBash.js"></script>
+	<script type="text/javascript" src="js/shBrushCpp.js"></script>
+	<script type="text/javascript" src="js/shBrushCSharp.js"></script>
+	<script type="text/javascript" src="js/shBrushCss.js"></script>
+	<script type="text/javascript" src="js/shBrushDelphi.js"></script>
+	<script type="text/javascript" src="js/shBrushDiff.js"></script>
+	<script type="text/javascript" src="js/shBrushGroovy.js"></script>
+	<script type="text/javascript" src="js/shBrushJava.js"></script>
+	<script type="text/javascript" src="js/shBrushJScript.js"></script>
+	<script type="text/javascript" src="js/shBrushPerl.js"></script>
+	<script type="text/javascript" src="js/shBrushPhp.js"></script>
+	<script type="text/javascript" src="js/shBrushPlain.js"></script>
+	<script type="text/javascript" src="js/shBrushPython.js"></script>
+	<script type="text/javascript" src="js/shBrushRuby.js"></script>
+	<script type="text/javascript" src="js/shBrushScala.js"></script>
+	<script type="text/javascript" src="js/shBrushSql.js"></script>
+	<script type="text/javascript" src="js/shBrushVb.js"></script>
+	<script type="text/javascript" src="js/shBrushXml.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/shCore.css"/>
+	<link type="text/css" rel="Stylesheet" href="css/shThemeDefault.css" id="theme" />
+	<link type="text/css" rel="stylesheet" href="css/common.css" charset="utf-8" media="screen" />
+	
+	<!-- Everything above this line is used for showing the demo page syntax and list boxes -->
+	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="js/quicksilver.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.multiplelivesearch.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			droplist(".clients",".clients",'.live_clients_list');
+			droplist(".employees",".employees",'.live_empls_list');
+			
+			$('.live_search').focus(function() {
+				var live_class = $(this).attr("id");
+				$(this).liveUpdate("."+live_class,$(this),$('.live_search_clear'));
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>MultipleLiveSearch (v1.0): jQuery LiveSearch modified for Multiple Instances and Escape/Delete Image</h1>
+		<div class="left">
+			<p>
+				This plugin takes <a href="http://ejohn.org/blog/jquery-livesearch/" target="_blank">John Resig's</a> version of 
+				<a href="http://orderedlist.com/articles/live-search-with-quicksilver-style-for-jquery" target="_blank">John Nunemaker</a> 
+				jquery.livesearch and adds the following features:
+				<ul>
+					<li>Multiple Instances</li>
+					<li>Sort/Dragable Lists</li>
+					<li>Reset search by:</li>
+					<ul>
+						<li>Escape key</li>
+						<li>Delete button</li>
+					</ul>
+				</ul>
+			</p>
+		</div>
+		<div class="right">
+			<h4>jquery.livesearch.js versions:</h4>
+			<ul>
+				<li>
+					v1.0 - <a href="http://orderedlist.com/demos/quicksilverjs/javascripts/jquery.livesearch.js" target="_blanks">jquery.livesearch.js</a><br/>
+					(author: <a href="http://orderedlist.com/articles/live-search-with-quicksilver-style-for-jquery" target="_blank">John Nunemaker</a>) [<a href="http://orderedlist.com/demos/quicksilverjs/jquery.html" target="_blank">demo</a>]
+				</li>
+				<li>
+					v2.0 - <a href="http://ejohn.org/apps/livesearch/jquery.livesearch.js" target="_blanks">jquery.livesearch.js</a><br/>
+					(author: <a href="http://ejohn.org/blog/jquery-livesearch/" target="_blank">John Resig</a>)
+				</li>
+			</ul>
+			<a href="http://github.com/styledev/jquery.multiplelivesearch.js" class="download">Check for Updates</a></div>
+		</div>
+	</div>
+	<div class="example">
+		<div class="wrapper">
+			<h4 class="mintop">Example of MultipleLiveSearch:</h4>
+			<div class="target-selection">
+				<div class="left_box">
+					<div class="filter-list">
+						<label>clients</label>
+						<input type="text" value="" name="live_search" id="clients" class="live_search"/>
+						<img src="images/delete.png" width="16" height="14" alt="Delete" class="live_search_clear">
+					</div>
+					<div class="list">
+						<ul class="live_clients_list clients">
+							<li>Apolit</li>
+							<li>Inksaint</li>
+							<li>OverridePro</li>
+							<li>Styledev</li>
+							<li>Vlytics</li>
+						</ul>
+					</div>
+				</div>
+				<div class="right_box">
+					<label>assign to project</label>
+					<div class="list">
+						<ul class="connectedSortable sort live_clients_list clients"></ul>
+					</div>
+				</div>
+			</div>
+			<div class="target-selection">
+				<div class="left_box">
+					<div class="filter-list">
+						<label>employees</label>
+						<input type="text" value="" name="live_search" id="employees" class="live_search"/>
+						<img src="images/delete.png" width="16" height="14" alt="Delete" class="live_search_clear">
+					</div>
+					<div class="list">
+						<ul class="live_empls_list employees">
+							<li>Bushaw, Dewey</li>
+							<li>Hasbard, Rich</li>
+							<li>Hathorne, Justin</li>
+							<li>Hunter, Scott</li>
+							<li>Jones, Mat</li>
+						</ul>
+					</div>
+				</div>
+				<div class="right_box">
+					<label>assign to project</label>
+					<div class="list">
+						<ul class="sort live_empls_list employees"></ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="wrapper">	
+		<h4>Link to JS / Enable LiveSearch / Create Sortable Lists:</h4>
+		<p>Insert this after your calls to all external JS files in the &lt;head&gt; area:</p>
+		<pre class="brush: js;">
+			&lt;script type="text/javascript" src="js/jquery-1.3.2.min.js"&gt;&lt;/script&gt;
+			&lt;script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"&gt;&lt;/script&gt;
+			&lt;script type="text/javascript" src="js/quicksilver.js" charset="utf-8"&gt;&lt;/script&gt;
+			&lt;script type="text/javascript" src="js/multiplelivesearch.js" charset="utf-8"&gt;&lt;/script&gt;
+			
+			&lt;script type="text/javascript"&gt;
+				$(document).ready(function(){
+					droplist(".clients",".clients",'.live_clients_list');
+					droplist(".employees",".employees",'.live_empls_list');
+					
+					$('.live_search').focus(function() {
+						var live_class = $(this).attr("id");
+						$(this).liveUpdate("."+live_class,$(this),$('.live_search_clear'));
+					});
+				});
+			&lt;/script&gt;
+		</pre>
+		
+		<h4>HTML:</h4>
+		<p>The input field "id" needs to be the same as the class name of the list(s) you wish to search and the "class"  should is how the plugin knows what to use for the filter.</p>
+		<pre class="brush: xml;">
+			&lt;label&gt;clients&lt;/label&gt;
+			&lt;input type="text" value="" name="live_search" id="clients" class="live_search"/&gt;
+			&lt;img src="images/delete.png" width="16" height="14" alt="Delete" class="live_search_clear"/&gt;
+			
+			&lt;ul class="live_clients_list clients"&gt;
+				&lt;li&gt;Apolit&lt;/li&gt;
+				&lt;li&gt;Inksaint&lt;/li&gt;
+				&lt;li&gt;OverridePro&lt;/li&gt;
+				&lt;li&gt;Styledev&lt;/li&gt;
+				&lt;li&gt;Vlytics&lt;/li&gt;
+			&lt;/ul&gt;
+			
+			&lt;label&gt;assign to project&lt;/label&gt;
+			&lt;ul class="live_clients_list clients"&gt;&lt;/ul&gt;
+			
+			
+			&lt;label&gt;employees&lt;/label&gt;
+			&lt;input type="text" value="" name="live_search" id="employees" class="live_search"/&gt;
+			&lt;img src="images/delete.png" width="16" height="14" alt="Delete" class="live_search_clear"/&gt;
+			
+			&lt;ul class="live_empls_list employees"&gt;
+				&lt;li&gt;Apolit&lt;/li&gt;
+				&lt;li&gt;Inksaint&lt;/li&gt;
+				&lt;li&gt;OverridePro&lt;/li&gt;
+				&lt;li&gt;Styledev&lt;/li&gt;
+				&lt;li&gt;Vlytics&lt;/li&gt;
+			&lt;/ul&gt;
+			
+			&lt;label&gt;assign to project&lt;/label&gt;
+			&lt;ul class="live_empls_list employees"&gt;&lt;/ul&gt;
+		</pre>
+		
+		<h4>Contents of jquery.multiplelivesearch.js:</h4>
+		<pre class="brush: js;">
+			jQuery.fn.liveUpdate = function(list,inputfield,clearbutton){
+				list = jQuery(list);
+				inputfield.keyup(function(e) {if (e.keyCode == 27) { $(this).val('') }});
+				clearbutton.click(function() {
+					$(this).siblings("input."+inputfield).val("");
+					$(this).siblings("input."+inputfield).focus();
+				})
+				if ( list.length ) {
+					var rows = list.children('li'),
+						cache = rows.map(function(){
+							return this.innerHTML.toLowerCase();
+						});
+					this
+						.keyup(filter).keyup()
+						.parents('form').submit(function(){
+							return false;
+						});
+				}
+				return this;
+				function filter(){
+					var term = jQuery.trim( jQuery(this).val().toLowerCase() ), scores = [];
+					if ( !term ) {
+						$(this).siblings("img."+clearbutton).hide();
+						rows.show();
+					} else {
+						$(this).siblings(clearbutton).show();
+						rows.hide();
+						cache.each(function(i){
+							var score = this.score(term);
+							if (score > 0) { scores.push([score, i]); }
+						});
+						jQuery.each(scores.sort(function(a, b){return b[0] - a[0];}), function(){
+							jQuery(rows[ this[1] ]).show();
+						});
+					}
+				}
+			};
+			
+			function droplist(id1,id2,connect_class){
+				$(id1+","+id2).sortable({
+					connectWith: connect_class,
+					placeholder: 'ui-state-highlight'
+				}).disableSelection();
+			};
+		</pre>
+	</div>
+	<script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = 'js/clipboard.swf';
+		SyntaxHighlighter.config.stripBrs = true;
+		SyntaxHighlighter.all();
+
+		function onThemeChange(sender)
+		{
+			var parts = sender.value.split('|');
+			document.getElementById("theme").href = "images/" + parts[1];
+			document.body.style.backgroundColor = parts[0];
+		}
+	</script>
+</body>
+</html>
